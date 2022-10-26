@@ -179,7 +179,7 @@ impl ContentType {
             ContentType::AudioAac => "audio/aac",
             ContentType::AudioMpeg => "audio/mpeg",
             ContentType::AudioOgg => "audio/ogg",
-            ContentType::AudioWebm => "video/webm",
+            ContentType::AudioWebm => "audio/webm",
             ContentType::VideoMpeg => "video/mpeg",
             ContentType::VideoMp4 => "video/mp4",
             ContentType::VideoWebm => "video/webm",
@@ -206,7 +206,7 @@ impl ContentType {
             "audio/ogg" => ContentType::AudioOgg,
             "video/mpeg" => ContentType::VideoMpeg,
             "video/mp4" => ContentType::VideoMp4,
-            "video/webm" => ContentType::AudioWebm,
+            "video/webm" => ContentType::VideoWebm,
             "*/*" | _ => ContentType::Unknown,
         }
     }
