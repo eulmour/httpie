@@ -7,7 +7,7 @@ mod route;
 
 const DEFAULT_ADDRESS: &'static str = "127.0.0.1:8080";
 
-const CLI_HELP_MSG: &'static str = "httpie 0.1.0\n\
+const CLI_HELP_MSG: &'static str = "httpie 0.1.1\n\
     \n\
     USAGE:\n\
         main [OPTIONS]\n\
@@ -38,15 +38,15 @@ fn main() {
                 result.0 = std::env::args().nth(index + 1)
             }
             if arg == "-d" || arg == "--dir" {
-                if result.0.is_some() { panic!("Invalid arguments."); }
+                if result.1.is_some() { panic!("Invalid arguments."); }
                 result.1 = std::env::args().nth(index + 1)
             }
             if arg == "-h" || arg == "--help" {
-                if result.1.is_some() { panic!("Invalid arguments."); }
+                if result.2.is_some() { panic!("Invalid arguments."); }
                 result.2 = Some(arg.clone())
             }
             if arg == "-V" || arg == "--version" {
-                if result.2.is_some() { panic!("Invalid arguments."); }
+                if result.3.is_some() { panic!("Invalid arguments."); }
                 result.3 = Some(arg)
             }
         }
@@ -61,7 +61,7 @@ fn main() {
     }
 
     if args.3.is_some() {
-        println!("{}", "Version 0.1.0");
+        println!("{}", "Version 0.1.1");
         return;
     }
 
